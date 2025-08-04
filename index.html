@@ -1,49 +1,426 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <!-- Reemplazar por los datos que correspondan -->
-        <title>Programación I | Final | APELLIDO/S</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
-        <link rel="shortcut icon" href="favicon.ico" />
-        <link rel="stylesheet" href="styles/styles.css" />
-        <script src="scripts/index.js"></script>
-    </head>
-    <body>
-        <header>
-            <!-- Reemplazar por los datos que correspondan -->
-            <h1>Programación I | Final | APELLIDO/S | Mi carrito</h1>
-        </header>
-        <main>
-            <!-- Este es un ejemplo de contenedor de carrito -->
-            <div id="carrito">
-                <p><span>0</span> ítems agregados</p>
-                <p>$<span>0</span> es el total</p>
-                <!-- Estos filtros pueden ser links, botones, menu desplegable. Sugiero generarlos dinamicamente -->
-                <p>Filtrar por <a href="#">Categoría 1</a> | <a href="#">Categoría 2</a> | <a href="#">Categoría 3</a></p>
-                <button>Ver carrito</button>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación I | Final| HIDALGO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="icon" href="img/favicon-32x32.png" type="image/png">
+
+</head>
+
+<body>
+    <header>
+        <section id="inicio">
+            <div class="container py-2 overflow-hidden">
+                <h1 class="text-sm-center">Porcelanato DT</h1>
             </div>
+        </section>
+
+        <section class="container">
+            <div class="carousel slide mx-auto" id="micarousel" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div
+                            class="banner-carousel banner-1 d-flex align-items-center justify-content-center text-center">
+                            <div class="text-white">
+                                <h2 class="fs-1 fw-bold">Elegancia y Resistencia</h2>
+                                <p class="p-banner fw-bold fs-2">Descubre nuestra selección de porcelanatos y
+                                    revestimientos de alta calidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div
+                            class="banner-carousel banner-2 d-flex align-items-center justify-content-center text-center">
+                            <div class="text-white">
+                                <h2 class="fs-1 fw-bold">Paga en cuotas sin interés.</h2>
+                                <p class="p-banner fw-bold fs-2">Aprovechá hasta 12 cuotas sin interés y renová tus
+                                    espacios hoy mismo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </header>
+
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-sm-center">Porcelanato DT</a>
+            <div class="fotoNav">
+                <img class="img-fluid d-none d-md-block mx-auto" src="img/LOGODT.png" alt="Banner de productos">
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse align-items-end justify-content-end text-center"
+                id="navbarNavAltMarkup">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item align-items-end justify-content-end text-center">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item align-items-end justify-content-end text-center">
+                        <a class="nav-link" href="#preguntas">Preguntas frecuentes</a>
+                    </li>
+                    <li class="nav-item align-items-end justify-content-end text-center">
+                        <a class="nav-link" href="#sobremi">Sobre mí</a>
+                    </li>
+                    <li class="nav-item align-items-end justify-content-end text-center">
+                        <a class="nav-link" href="#form">Hablemos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a type="button" id="verCarritoBtn" class="micarrito" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">🛒 <span
+                                id="contador-carrito" class="badge ">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container" id="home">
+            <div id="texto-izq">
+                <h2>¿Quiénes somos?</h2>
+                <p>En Porcelanato DT nos especializamos en ofrecer revestimientos de alta calidad, piezas sanitarias de
+                    diseño y un asesoramiento personalizado para que cada ambiente refleje estilo, confort y
+                    funcionalidad.
+
+                    Trabajamos con materiales duraderos, estéticamente impactantes y técnicamente confiables, ideales
+                    para baños, cocinas, exteriores y espacios comerciales. Te acompañamos
+                    en cada etapa del proyecto, desde la elección del producto hasta su aplicación final, garantizando
+                    resultados que superan expectativas.
+
+                    Creamos espacios únicos con soluciones pensadas para ti.</p>
+            </div>
+            <div id="banner-texto">
+                <img src="img/sec1.jpg" alt="Imagen de porcelanto">
+            </div>
+        </section>
+
+        <section class="container" id="producto">
             <h2>Productos</h2>
-            
+            <div class="seccionFiltros">
+                <div class="filtro-contenedor">
+                    <label for="categoria">Filtrar por:</label>
+                    <select id="categoria">
+                        <option value="">Todas las categorías</option>
+                    </select>
+                </div>
+                <div class="filtro-precio">
+                    <label for="precio">Ordenar por precio:</label>
+                    <select id="ordenPrecio">
+                        <option value="asc">Precio: Menor a mayor</option>
+                        <option value="desc">Precio: Mayor a menor</option>
+                    </select>
+                </div>
+            </div>
             <div id="productos">
-                <!-- Aca irian los productos -->
+                <!-- Productos -->
+            </div>
+        </section>
+
+        <section class="container" id="preguntas">
+            <h2 class="text-sm-center">Preguntas frecuentes</h2>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Hacen envíos a todo el país?
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Sí, realizamos envíos a toda la Argentina. También ofrecemos envíos internacionales a países
+                            seleccionados.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ¿Cuánto demora el envío?
+                        </button>
+                    </h3>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Los envíos suelen demorar entre 2 a 7 días hábiles dependiendo de tu ubicación. Te
+                            compartiremos un número de seguimiento apenas el pedido sea despachado.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            ¿Qué métodos de pago aceptan?
+                        </button>
+                    </h3>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Podés pagar con tarjeta de crédito, débito, transferencia bancaria, o mediante Mercado Pago.
+                            También ofrecemos cuotas sin interés en productos seleccionados.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            ¿Puedo retirar mi pedido en persona?
+                        </button>
+                    </h3>
+                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Sí, contamos con punto de retiro en Belgrano, CABA. Al finalizar la compra, seleccioná
+                            la opción “Retiro en tienda”.
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </section>
+
+        <section class="container" id="sobremi">
+            <div id="banner-texto">
+                <img class="yeisy" src="img/sm.png" alt="Imagen de porcelanto">
+            </div>
+            <div id="texto-izq">
+                <h2>Sobre mí...</h2>
+                <p>Detrás de este emprendimiento se encuentra Carla, una apasionada del diseño de interiores y la
+                    calidad en los detalles. Con una visión clara y el deseo de brindar soluciones duraderas y
+                    estéticamente superiores, fundó su proyecto especializado en porcelanatos de alto nivel. Carla no
+                    solo selecciona cuidadosamente cada producto, sino que también ofrece asesoramiento personalizado
+                    para que cada cliente encuentre la pieza ideal para transformar su espacio. Su compromiso con la
+                    excelencia, la innovación y la atención cercana la han convertido en una referente en el rubro.
+                </p>
+            </div>
+        </section>
+
+
+ <section class="container my-5" id="form">
+  <div class="formulario">
+    <h2 id="contacto" class="text-center mb-4">Contacto</h2>
+    <p class="text-center mb-5 mt-5">
+      ¿Tienes dudas, consultas o quieres asesoramiento personalizado?
+      Completa el formulario y nos pondremos en contacto lo antes posible.
+      ¡Estamos para ayudarte a elegir el porcelanato ideal para tu espacio!
+    </p>
+
+    <form action="#" method="post" class="row g-4 justify-content-center">
+      <!-- Nombre y Apellido en la misma fila -->
+      <div class="row gx-5 mt-3">
+        <div class="col-12 col-md-6">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" name="nombre" id="nombre" class="form-control form-control-lg" placeholder="Tu nombre" required>
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" name="apellido" id="apellido" class="form-control form-control-lg" placeholder="Tu apellido" required>
+        </div>
+      </div>
+
+      <!-- Celular -->
+       <div class="row gx-5">
+      <div class="col-12 col-md-6">
+        <label for="celular" class="form-label">Celular</label>
+        <input type="tel" name="celular" id="celular" class="form-control form-control-lg" placeholder="Ej: 11 1234 5678" required>
+      </div>
+
+      <!-- Email -->
+      <div class="col-12 col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="tucorreo@ejemplo.com" required>
+      </div>
+      </div>
+
+      <!-- Comentarios -->
+      <div class="col-12">
+        <label for="comentarios" class="form-label">Comentarios</label>
+        <textarea name="comentarios" id="comentarios" rows="4" class="form-control form-control-lg" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+      </div>
+
+      <!-- Botón -->
+      <div class="col-12 text-center">
+        <input type="#" id="btnForm" value="Enviar" class="btn btn-success px-5 py-2">
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+
+
+
+        <!-- Modal -->
+        <div id="modalCarrito" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <div class="modal-body" id="modalBody">
+                    <!-- Contenido del carrito -->
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Modal Compra -->
+<div class="modal" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true"
+  data-bs-backdrop="false">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalCompraLabel">Confirmación de compra</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="formCompra">
+          <!-- Datos personales -->
+          <div class="mb-3">
+            <label for="nombreCliente" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="nombreCliente" required>
+          </div>
+          <div class="mb-3">
+            <label for="emailCliente" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="emailCliente" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefonoCliente" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefonoCliente" required>
+          </div>
+          <div class="mb-3">
+            <label for="direccionCliente" class="form-label">Dirección de entrega</label>
+            <textarea class="form-control" id="direccionCliente" rows="2" required></textarea>
+          </div>
+
+          <!-- Método de pago -->
+          <div class="metodo-pago px-3 pt-2">
+            <h3>Elige el método de pago</h3>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="metodoPago" id="pagoEfectivo" value="efectivo">
+              <label class="form-check-label" for="pagoEfectivo">
+                Efectivo / Transferencia
+              </label>
             </div>
 
-        </main>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" name="metodoPago" id="pagoTarjeta" value="tarjeta" checked>
+              <label class="form-check-label" for="pagoTarjeta">
+                Tarjeta de crédito / débito
+              </label>
+            </div>
 
-        <footer>
-            <ul>
-                <li>Profesor Fabrizio Carlassara</li>
-                <li>
-                    <a href="mailto:fabrizio.carlassara@davinci.edu.ar?subject=P1%20-%20Consulta%20-%20DW2[M|T|N][A|B]%20-%20Apellido,%20Nombre" target="_blank">fabrizio.carlassara@davinci.edu.ar</a>
-                </li>
-                <li>Programación 1</li>
-                <li>
-                    <!-- Reemplazar por el link del repositorio de GitHub -->
-                    <a href="#">URL del repo de GitHub</a>
-                </li>
-            </ul>
-        </footer>
-        
-    </body>
+            <!-- Campos tarjeta (visibles solo si se selecciona tarjeta) -->
+            <div id="camposTarjeta">
+              <div class="mb-3">
+                <label for="nombreTarjeta" class="form-label">Nombre tal como figura en la tarjeta</label>
+                <input type="text" class="form-control" id="nombreTarjeta" required>
+              </div>
+              <div class="mb-3">
+                <label for="numeroTarjeta" class="form-label">Número de la tarjeta</label>
+                <input type="text" class="form-control" id="numeroTarjeta" required>
+              </div>
+              <div class="mb-3">
+                <label for="cuotasPago" class="form-label">Cantidad de cuotas</label>
+                <select class="form-select" id="cuotasPago" required>
+                  <option value="">Elige la cantidad de cuotas</option>
+                  <option value="1">1 cuota</option>
+                  <option value="3">3 cuotas</option>
+                  <option value="6">6 cuotas</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <!-- Mensaje final oculto por JS si querés usarlo -->
+        <div id="mensajeCompra" class="text-success mt-3" style="display: none;">
+          ¡Gracias por tu compra! Nos pondremos en contacto contigo pronto.
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-sm btnSec" form="formCompra">Confirmar Compra</button>
+        <button type="button" class="btn btn-sm btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
+  
+
+
+    </main>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title" id="offcanvasRightLabel">Mi carrito</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+        </div>
+        <div class="offcanvas-total">
+            <p id="productos-total-WEB">Productos: 0</p>
+            <p id="carrito-total-WEB">Total: 0</p>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+  <button class="btn btnSec px-4" id="btnFinalizarCompra">Finalizar compra</button>
+</div>
+
+
+    </div>
+
+    <div id="alertas-container" class="position-fixed top-0 end-0 p-3" style="z-index: 1050;"></div>
+
+    <div id="oferta-flotante" class="d-none">
+  <button id="cerrar-oferta">✖</button>
+  <div class="contenido-banner">
+    <img id="img-oferta" src="" alt="Imagen de oferta" />
+  </div>
+</div>
+</div>
+
+
+
+    <footer>
+        <ul>
+            <li>Profesor Fabrizio Carlassara</li>
+            <li>Programación I</li>
+            <li>
+                <a target="_blank" href="https://github.com/ismarhidalgo/pI-parcial-2#">Repositorio de GitHub -
+                    Ismar</a>
+            </li>
+            <li>
+                <a target="_blank" href="#">Repositorio de GitHub -
+                    Ailén</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+
 </html>
