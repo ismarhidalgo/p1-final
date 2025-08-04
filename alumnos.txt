@@ -1,6 +1,10 @@
-Alumnos/as: 
-Cuatrimestre: 
-Comisión: 
-Turno: 
-Materia: 
-Profesor: 
+Datos del Alumno
+
+
+* Nombre: Ismar y Ailen
+* Apellido: Hidalgo y Sosa
+* Cuatrimestre: II cuatrimestre
+* Comisión: DWN2AV
+* Turno: Noche
+* Materia: Programación I
+* Profesor: Carlassara Fabrizio
